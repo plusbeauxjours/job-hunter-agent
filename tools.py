@@ -1,31 +1,42 @@
 import os, re
-
+import requests
 from crewai.tools import tool
-from firecrawl import FirecrawlApp, ScrapeOptions
 
+@tool("Web Search Tool")
+def web_search_tool(query: str) -> str:
+    """Searches the web for information using Firecrawl API and returns cleaned results."""
+    url = "https://api.firecrawl.dev/v2/search"
 
-@tool
-def web_search_tool(query: str):
-    app = FirecrawlApp(api_key=os.getenv("FIRECRAWL_API_KEY"))
+    payload = {
+        "query": query,
+        "sources": ["web"],
+        "categories": [],
+        "limit": 5,
+        "scrapeOptions": {
+            "onlyMainContent": True,
+            "maxAge": 172800000,
+            "parsers": ["pdf"],
+            "formats": ["markdown"],
+        },
+    }
 
-    response = app.search(
-        query=query,
-        limit=5,
-        scrape_options=ScrapeOptions(
-            formats=["markdown"],
-        ),
-    )
+    headers = {
+        "Authorization": f"Bearer {os.getenv('FIRECRAWL_API_KEY')}",
+        "Content-Type": "application/json",
+    }
 
-    if not response.success:
+    response = requests.post(url, json=payload, headers=headers)
+    response = response.json()
+
+    if response["success"] is not True:
         return "Error using tool."
 
     cleaned_chunks = []
 
-    for result in response.data:
-
+    for result in response["data"]["web"]:
         title = result["title"]
         url = result["url"]
-        markdown = result["markdown"]
+        markdown = result["markdown"] if "markdown" in result else ""
 
         cleaned = re.sub(r"\\+|\n+", "", markdown).strip()
         cleaned = re.sub(r"\[[^\]]+\]\([^\)]+\)|https?://[^\s]+", "", cleaned)
