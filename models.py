@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 from pydantic import BaseModel
 from datetime import date
 
@@ -8,28 +8,28 @@ class Job(BaseModel):
     job_title: str
     company_name: str
     job_location: str
-    is_remote_friendly: bool | None = None
-    employment_type: str | None = None
-    compensation: str | None = None
+    is_remote_friendly: Optional[bool] = None
+    employment_type: Optional[str] = None
+    compensation: Optional[str] = None
     job_posting_url: str
     job_summary: str
 
-    key_qualifications: List[str] | None = None
-    job_responsibilities: List[str] | None = None
-    date_listed: date | None = None
-    required_technologies: List[str] | None = None
-    core_keywords: List[str] | None = None
+    key_qualifications: Optional[List[str]] = None
+    job_responsibilities: Optional[List[str]] = None
+    date_listed: Optional[date] = None
+    required_technologies: Optional[List[str]] = None
+    core_keywords: Optional[List[str]] = None
 
-    role_seniority_level: str | None = None
-    years_of_experience_required: str | None = None
-    minimum_education: str | None = None
-    job_benefits: List[str] | None = None
-    includes_equity: bool | None = None
-    offers_visa_sponsorship: bool | None = None
-    hiring_company_size: str | None = None
-    hiring_industry: str | None = None
-    source_listing_url: str | None = None
-    full_raw_job_description: str | None = None
+    role_seniority_level: Optional[str] = None
+    years_of_experience_required: Optional[str] = None
+    minimum_education: Optional[str] = None
+    job_benefits: Optional[List[str]] = None
+    includes_equity: Optional[bool] = None
+    offers_visa_sponsorship: Optional[bool] = None
+    hiring_company_size: Optional[str] = None
+    hiring_industry: Optional[str] = None
+    source_listing_url: Optional[str] = None
+    full_raw_job_description: Optional[str] = None
 
 
 class JobList(BaseModel):
