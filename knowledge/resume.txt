@@ -1,0 +1,162 @@
+# MINJAE LEE
+**Web3 Frontend Engineer**
+
+📧 plusbeauxjours@gmail.com | 📱 +82-10-8520-1031  
+🔗 [github.com/plusbeauxjours](https://github.com/plusbeauxjours) | 💼 [linkedin.com/in/plusbeauxjours](https://linkedin.com/in/plusbeauxjours)
+
+---
+
+## PROFESSIONAL SUMMARY
+
+Web3-native Frontend Engineer with 5+ years of experience, currently specializing in blockchain technology and decentralized applications at Common Computer. Deep expertise in building NFT platforms, multi-wallet integrations, and Web3 artist collaboration tools. Proven track record of bridging traditional web development with blockchain innovation, having successfully delivered NFT canvas editors with on-chain interactions, secure wallet management systems, and token transfer interfaces.
+
+Core competencies include React/Next.js ecosystem, Web3.js/Ethers.js integration, smart contract interaction, and creating user-friendly interfaces for complex blockchain operations. Passionate about making Web3 accessible through intuitive UX while maintaining security and decentralization principles.
+
+---
+
+## CORE COMPETENCIES
+
+**Web3 Technologies:** Ethers.js, Web3.js, WalletConnect, MetaMask Integration, NFT Standards (ERC-721/1155), Token Interactions (ERC-20), IPFS Integration
+
+**Blockchain Platforms:** Ethereum, Polygon, Layer 2 Solutions, Smart Contract Interaction
+
+**Frontend Stack:** React 18, Next.js 14, TypeScript, Canvas API, WebGL, State Management (Redux/Zustand)
+
+**Development Practices:** Gas Optimization Awareness, Secure Key Management, Web3 UX Patterns, Cross-chain Compatibility
+
+---
+
+## PROFESSIONAL EXPERIENCE
+
+### **Common Computer** | Seoul, South Korea
+**Web3 Software Engineer** | *February 2023 - Present*
+
+**Leading Web3 Innovation & NFT Platform Development**
+
+• **NFT Canvas Editor Platform**
+  - Architected and developed a revolutionary NFT minting platform with real-time canvas editing capabilities
+  - Implemented flood fill algorithms integrated with on-chain metadata storage
+  - Built collaborative features enabling Web3 artists to co-create and mint NFTs directly from the browser
+  - Integrated IPFS for decentralized asset storage with fallback to Arweave
+  - Result: Facilitated 500+ NFT mints with 0% failed transactions through optimized gas estimation
+
+• **Multi-Wallet Infrastructure**
+  - Designed and implemented comprehensive wallet management supporting MetaMask, WalletConnect, and raw private keys
+  - Developed secure seed phrase recovery system with encrypted local storage
+  - Built account abstraction layer for gasless transactions using ERC-4337 standards
+  - Created wallet connection analytics dashboard tracking user preferences and connection patterns
+  - Achievement: Increased wallet connection success rate from 75% to 95%
+
+• **AIN Token Transfer Interface**
+  - Developed sophisticated token transfer UI with real-time balance updates and gas estimation
+  - Implemented transaction validation logic preventing common user errors (insufficient balance, wrong network)
+  - Built transaction history viewer with pending/confirmed/failed state management
+  - Integrated price feed oracles for real-time USD conversion display
+  - Impact: Processed $2M+ in token transfers with 99.8% success rate
+
+• **Web3 Authentication System**
+  - Implemented Sign-In with Ethereum (SIWE) for decentralized authentication
+  - Built JWT token generation from wallet signatures for session management
+  - Developed role-based access control tied to on-chain NFT ownership
+  - Created social recovery mechanisms for wallet access
+
+• **Cross-Chain Bridge Interface**
+  - Developed UI for cross-chain token bridging between Ethereum and Layer 2s
+  - Implemented transaction tracking across multiple chains
+  - Built failsafe mechanisms for stuck transactions with manual retry options
+
+**Technical Achievements:**
+- Reduced transaction failure rate by 40% through intelligent gas estimation and retry mechanisms
+- Improved Web3 onboarding flow resulting in 60% reduction in user drop-off
+- Maintained 99.9% uptime for Web3 services through redundant RPC providers
+- Contributed to open-source Web3 component library with 200+ GitHub stars
+
+---
+
+### **LiLi Style** | Singapore
+**Full Stack Developer** | *April 2021 - January 2023*
+
+• Developed REST-to-GraphQL migration strategy improving API response time by 35%
+• Built data visualization dashboard with D3.js for real-time analytics
+• Designed component library reducing QA issues by 40% and maintenance costs by 35%
+• Scaled platform from 1K to 6K DAU during Series A growth phase
+
+---
+
+### **Wesop** | Jakarta, Indonesia
+**Frontend Developer** | *August 2020 - March 2021*
+
+• Established code review culture and comprehensive documentation reducing onboarding time by 30%
+• Automated iOS/Android deployments via Fastlane, cutting release time by 60%
+• Developed location-based attendance system with geofencing capabilities
+• Implemented time-series data visualization reducing user churn by 15%
+
+---
+
+### **FreeLancer** | Seoul, South Korea
+**Full Stack Developer** | *October 2019 - August 2020*
+
+• Rebuilt Django backend with GraphQL, optimizing client-side queries by 30%
+• Implemented Apollo Client caching and optimistic UI updates
+• Reduced booking delays from 1.4s to 0.7s, increasing return visits by 20%
+
+---
+
+## KEY WEB3 PROJECTS
+
+### **NFT Marketplace Integration**
+- Integrated OpenSea API for collection analytics and floor price tracking
+- Built rarity calculator analyzing on-chain attributes
+- Implemented batch NFT operations for efficient gas usage
+
+### **DeFi Dashboard Prototype**
+- Created yield farming dashboard aggregating multiple protocols
+- Implemented APY calculations and impermanent loss warnings
+- Built transaction simulation for preview before execution
+
+### **DAO Voting Interface**
+- Developed governance token voting interface
+- Implemented delegation mechanisms and vote weight calculations
+- Created proposal tracking system with on-chain execution
+
+---
+
+## EDUCATION & CERTIFICATIONS
+
+**AWS Certified Cloud Practitioner** | *May 2024*
+
+**Self-Directed Web3 Learning**
+- Completed ConsenSys Blockchain Developer Program
+- Active participant in ETHGlobal hackathons
+- Contributing member of Developer DAO
+
+---
+
+## TECHNICAL SKILLS
+
+**Blockchain:** Solidity (reading/integration), Hardhat, Remix, Truffle, Ganache, Alchemy, Infura, QuickNode
+
+**Frontend:** React 18, Next.js 14, TypeScript, TailwindCSS, Canvas API, WebGL, Three.js
+
+**Web3 Libraries:** Ethers.js, Web3.js, Web3Modal, RainbowKit, wagmi, viem
+
+**State Management:** Zustand, Redux Toolkit, Context API
+
+**Testing:** Jest, React Testing Library, Cypress, Hardhat Testing
+
+**Tools:** Git, Docker, Vercel, IPFS, Arweave, The Graph, Moralis
+
+---
+
+## LANGUAGES
+
+**Korean:** Native | **English:** Professional Working Proficiency
+
+---
+
+## INTERESTS & COMMUNITY
+
+• Active contributor to Web3 open-source projects
+• Regular attendee of Seoul Ethereum Meetup
+• Mentor for Web3 development bootcamps
+• NFT art collector and DeFi enthusiast
