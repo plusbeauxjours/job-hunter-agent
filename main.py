@@ -1,41 +1,52 @@
-from dotenv import load_dotenv
-
-load_dotenv()
-
-from crewai import Agent, Crew, Task
-from crewai.project import CrewBase, agent, crew, task
+from pathlib import Path
+import yaml
+from crewai import Crew, Agent, Task
+from crewai.project import CrewBase, agent, task, crew
 from crewai.knowledge.source.text_file_knowledge_source import TextFileKnowledgeSource
 from models import JobList, RankedJobList, ChosenJob
 from tools import web_search_tool
+
+
+def create_resume_knowledge(agent_name: str):
+    return TextFileKnowledgeSource(
+        file_paths=["resume.txt"], collection_name=f"resume_{agent_name}"
+    )
+
+
+CONFIG_DIR = Path(__file__).parent / "config"
+with open(CONFIG_DIR / "agents.yaml", "r") as f:
+    AGENTS_CFG = yaml.safe_load(f)
+with open(CONFIG_DIR / "tasks.yaml", "r") as f:
+    TASKS_CFG = yaml.safe_load(f)
+
 
 @CrewBase
 class JobHunterCrew:
     @agent
     def job_search_agent(self) -> Agent:
         return Agent(
-            config=self.agents_config["job_search_agent"],
-            tools=[web_search_tool],
+            config=self.agents_config["job_search_agent"], tools=[web_search_tool]
         )
 
     @agent
     def job_matching_agent(self) -> Agent:
         return Agent(
             config=self.agents_config["job_matching_agent"],
-            knowledge_sources=[TextFileKnowledgeSource(file_paths=["resume.txt"])],
+            knowledge_sources=[create_resume_knowledge("job_matching")],
         )
 
     @agent
     def resume_optimization_agent(self) -> Agent:
         return Agent(
             config=self.agents_config["resume_optimization_agent"],
-            knowledge_sources=[TextFileKnowledgeSource(file_paths=["resume.txt"])],
+            knowledge_sources=[create_resume_knowledge("resume_optimization")],
         )
 
     @agent
     def company_research_agent(self) -> Agent:
         return Agent(
             config=self.agents_config["company_research_agent"],
-            knowledge_sources=[TextFileKnowledgeSource(file_paths=["resume.txt"])],
+            knowledge_sources=[create_resume_knowledge("company_research")],
             tools=[web_search_tool],
         )
 
@@ -43,7 +54,7 @@ class JobHunterCrew:
     def interview_prep_agent(self) -> Agent:
         return Agent(
             config=self.agents_config["interview_prep_agent"],
-            knowledge_sources=[TextFileKnowledgeSource(file_paths=["resume.txt"])],
+            knowledge_sources=[create_resume_knowledge("interview_prep")],
         )
 
     @task
@@ -105,17 +116,10 @@ class JobHunterCrew:
         )
 
 
-result = (
-    JobHunterCrew()
-    .crew()
-    .kickoff(
-        inputs={
-            "level": "Senior",
-            "position": "Web3 Developer",
-            "location": "Germany",
-        }
-    )
+JobHunterCrew().crew().kickoff(
+    inputs={
+        "level": "Senior",
+        "position": "Frontend Developer",
+        "location": "Germany",
+    }
 )
-
-for task_output in result.tasks_output:
-    print(task_output.pydantic)
